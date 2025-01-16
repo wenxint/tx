@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta
+      name="Description"
+      content="【航海王壮志雄心】首测出航 30+伙伴PVP竞技。每个伙伴都是梦想的主角。多章主线剧情还原追番，终结技飞行道具等进阶战斗玩法。正版IP授权，腾讯魔方工作室群与万代南梦宫联合研发，3D动作格斗大秀。"
+    />
+    <meta
+      name="Keywords"
+      content="航海王壮志雄心,壮志雄心,航海王,海贼王,航海王手游,腾讯航海王,腾讯海贼王,魔方航海王,魔方海贼王,航海王壮志雄心招募开启,航海王首测出航,航海王壮志雄心首测开启"
+    />
+    <title>航海王：壮志雄心</title>
+    <!--处理将链接发送到QQ/微信/企微显示异常-->
+    <meta itemprop="name" content="航海王：壮志雄心" />
+    <meta
+      itemprop="description"
+      content="【航海王壮志雄心】首测出航 30+伙伴PVP竞技。每个伙伴都是梦想的主角。多章主线剧情还原追番，终结技飞行道具等进阶战斗玩法。正版IP授权，腾讯魔方工作室群与万代南梦宫联合研发，3D动作格斗大秀。"
+    />
+    <meta
+      itemprop="image"
+      content="https:https://game.gtimg.cn/images/op/m202404/share.jpg"
+    />
+  </head>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/index.css" />
+
+  <body>
+    <!-- 协议iframe -->
+    <div class="popup-window" id="popupWindow">
+      <a href="javascript:onLink();" class="spr exit_popup-window">
+        <img
+          class="back"
+          src="https://game.gtimg.cn/images/op/act/a20241009czdj/back.png"
+          alt="head"
+      /></a>
+      <iframe
+        src="about:blank"
+        id="minWindow"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allowfullscreen=""
+      ></iframe>
+    </div>
+
+    <!-- PC下遮挡 -->
+    <div class="pc_mask" style="display: none">
+      <img
+        src="https://game.gtimg.cn/images/op/act/a20241009czdj/code.png"
+        alt="code"
+      />
+      <p>请用手机QQ/微信扫码参与</p>
+      <p>PS：QQ/微信角色不互通</p>
+    </div>
+    <div class="container safari_only">
+      <!-- 头部图片 -->
+      <img
+        class="head_banner"
+        src="https://game.gtimg.cn/images/op/act/a20241009czdj/head.png"
+        alt="head"
+      />
+      <!-- 返回按钮 -->
+      <img
+        class="back"
+        style="display: none"
+        id="return_game"
+        src="https://game.gtimg.cn/images/op/act/a20241009czdj/back.png"
+        alt="head"
+        onclick="ActFun.useMSDK('close')"
+      />
+      <!-- 底部内容 -->
+      <div class="content">
+        <div class="area" id="area">请绑定游戏角色</div>
+        <img
+          class="tagline"
+          src="https://game.gtimg.cn/images/op/act/a20241009czdj/tagline.png"
+          alt="tagline"
+        />
+        <div class="mobile_box">
+          <input
+            class="mobile"
+            id="mobileInp"
+            placeholder="请输入您的手机号码"
+            maxlength="11"
+          />
+          <img
+            class="update_mobile"
+            onclick="changePhone()"
+            src="https://game.gtimg.cn/images/op/act/a20241009czdj/update_mobile.png"
+            alt="update_mobile"
+          />
+        </div>
+        <div class="agreement_box" onclick="changeRadio()">
+          <img
+            id="radio"
+            src="https://game.gtimg.cn/images/op/act/a20241009czdj/sel.png"
+            alt="sel"
+          />
+          <div class="agreement" id="agreement">
+            我已阅读并同意<a href="javascript:onLink(1)"
+              >《航海王：壮志雄心隐私协议》</a
+            ><a href="javascript:onLink(2)">《运营商隐私协议》</a>并绑定本手机号
+            已同意接受《航海王：壮志雄心》手游向我提供的手机号通过短信、电话通知账户安全类
+            活动通知类信息，详见 活动规则。
+          </div>
+        </div>
+        <div class="flex-center">
+          <img
+            class="confirm"
+            id="confirm"
+            onclick="void(1)"
+            src="https://game.gtimg.cn/images/op/act/a20241009czdj/confirm.png"
+            alt="confirm"
+          />
+          <img
+            class="confirm_not"
+            src="https://game.gtimg.cn/images/op/act/a20241009czdj/confirm_not.png"
+            alt="confirm_not"
+          />
+        </div>
+        <img
+          class="tips"
+          src="https://game.gtimg.cn/images/op/act/a20241009czdj/tips.png"
+          alt="tips"
+        />
+        <div class="unsubscribe">
+          *点此<span onclick="onRemove()">解绑及信息退订</span
+          >，解绑后该手机号不再收到相关消息短信电话通知。
+        </div>
+      </div>
+      <!-- 公共底 -->
+      <!-- <div class="commonBottom"></div> -->
+    </div>
+
+    <!-- 弹窗 -->
+    <div class="dialog flex-center">
+      <!-- 蒙层 -->
+      <div class="dialogMask"></div>
+      <!-- 内容部分 -->
+      <div class="popup">
+        <div class="title-box">
+          <div class="title" id="title">请输入验证码</div>
+          <div class="close" id="close"></div>
+        </div>
+        <div id="popup">
+          <!-- 绑定验证码弹窗 -->
+          <div id="updateMobile">
+            <input class="code" id="codeInp" placeholder="请输入验证码" />
+            <div class="code_btn">
+              <img
+                class="hide"
+                onclick="requestPhoneCode(0)"
+                src="https://game.gtimg.cn/images/op/act/a20241009czdj/popup_code.png"
+                alt="popup_code"
+              />
+              <div class="timer" id="timer"></div>
+            </div>
+          </div>
+          <!-- 解绑验证码弹窗 -->
+          <div id="removePhoneCode">
+            <input
+              class="code"
+              id="codeInp_remove"
+              placeholder="请输入验证码"
+            />
+            <div class="code_btn">
+              <img
+                class="hide"
+                onclick="requestPhoneCode(1)"
+                src="https://game.gtimg.cn/images/op/act/a20241009czdj/popup_code.png"
+                alt="popup_code"
+              />
+              <div class="timer" id="timer_remove"></div>
+            </div>
+          </div>
+          <!-- 领取奖励成功 -->
+          <div class="text" id="award">
+            恭喜您绑定成功并获得活动奖励！<br />
+            奖励已发送至游戏内邮箱，请及时查收。
+          </div>
+          <!-- 解绑提示 -->
+          <div class="text2" id="remove">
+            根据个人信息保护法要求，解绑后手机号<span id="mobile"></span
+            >将无法再接收《航海王：壮志雄心》手游的信息通知（含账户安全类信息），请谨慎选择！如需要维持绑定，请点击X取消，解绑请点击下方确定。
+          </div>
+          <!-- 自定义弹窗 -->
+          <div class="custom flex-center" id="custom">
+            <div></div>
+          </div>
+        </div>
+
+        <img
+          onclick="confirmPop()"
+          id="confirmPop"
+          class="popup_confirm"
+          src="https://game.gtimg.cn/images/op/act/a20241009czdj/popup_btn.png"
+          alt="popup_btn"
+        />
+      </div>
+    </div>
+    <!-- 验证提示 -->
+    <div class="toast" id="toast">
+      <div></div>
+    </div>
+
+    <!-- <script  src="https://ossweb-img.qq.com/images/js/mobile_bundle/util/zepto-all.js"></script>
+  <script  src="https://ossweb-img.qq.com/images/js/mobile_bundle/milo.js"></script>
+  <script  src="https://game.gtimg.cn/images/js/milo-next/latest/milo.min.js"></script>
+  <script  src="https://ossweb-img.qq.com/images/js/eas/eas.js"></script>
+  <script  src="https://op.qq.com/act/a20241009czdj/js/preloadjs.min.js"></script> -->
+
+    <!-- <script  src="//ossweb-img.qq.com/images/js/mobile_bundle/util/zepto-all.js"></script>
+  <script  src="//ossweb-img.qq.com/images/js/mobile_bundle/milo.js"></script>
+  <script  src="//game.gtimg.cn/images/js/milo-next/latest/milo.min.js"></script>
+  <script  src="//ossweb-img.qq.com/images/js/eas/eas.js"></script>
+  <script  src="./js/preloadjs.min.js"></script> -->
+
+    <!-- <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
+    <script>
+      // 初始化
+      var vConsole = new VConsole();
+      console.log("Hello world");
+    </script> -->
+
+    <script type="module" src="/main.js"></script>
+    <script src="https://ossweb-img.qq.com/images/js/mobile_bundle/util/zepto-all.js"></script>
+    <script src="https://ossweb-img.qq.com/images/js/mobile_bundle/milo.js"></script>
+    <script src="https://game.gtimg.cn/images/js/milo-next/latest/milo.min.js"></script>
+    <script src="https://ossweb-img.qq.com/images/js/eas/eas.js"></script>
+    <script src="https://op.qq.com/act/a20241009czdj/js/preloadjs.min.js"></script>
+
+    <!-- 自定义事件 -->
+    <script src="/js/index.js"></script>
+
+    <script src="/js/nextCommon.js"></script>
+    <script src="/js/actV2.js"></script>
+  </body>
+</html>
