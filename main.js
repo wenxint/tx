@@ -41,13 +41,13 @@ function loadScript(url, doc = document) {
 }
 
 
-// loadScript("./js/index.js")
-//   .then(() => {
-//     return loadScript("./js/nextCommon.js");
-//   })
-//   .then(() => {
-//     return loadScript("./js/actV2.js");
-//   });
+loadScript("./js/index.js")
+  .then(() => {
+    return loadScript("./js/nextCommon.js");
+  })
+  .then(() => {
+    return loadScript("./js/actV2.js");
+  });
 
 
 console.log("Hello Vite!");
