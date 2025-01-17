@@ -22,6 +22,8 @@
 
 // setupCounter(document.querySelector('#counter'))
 import Vconsole from "vconsole";
+// import image from './src/1.webp'
+// console.log(image);
 
 // import index from './js/index.js'
 // import nextCommon from './js/nextCommon.js'

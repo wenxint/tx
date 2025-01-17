@@ -410,6 +410,7 @@ window.alert = function (msg) {
 }
 
 //入口
+//ActFun 是后面的文件actV2.js
 function start() {
     ActFun.loginProcess();
     if (ActTools.isPhone()) {//手机默认设置分享

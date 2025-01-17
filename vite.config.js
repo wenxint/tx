@@ -51,11 +51,13 @@ import path from "path";
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, __dirname); // 根据 mode 来判断当前是何种环境
   console.log(env);
+  console.log(import.meta.url);
 
   return {
     resolve: {
       alias: {
-        "@": fileURLToPath(new URL("./js", import.meta.url)),
+        // "@": fileURLToPath(new URL("./js", import.meta.url)),
+          "@": fileURLToPath(new URL("./src", import.meta.url)),
       },
     },
     plugins: [
@@ -95,7 +97,7 @@ export default defineConfig(({ mode }) => {
       hmr: {
         overlay: false,
       },
-      host: '0.0.0.0', // 指定服务器应该监听哪个 IP 地址，默认localhost，可设置为'0.0.0.0'或 true
+      host: "0.0.0.0", // 指定服务器应该监听哪个 IP 地址，默认localhost，可设置为'0.0.0.0'或 true
       // host: 'test.qq.com', // 指定服务器应该监听哪个 IP 地址，默认localhost，可设置为'0.0.0.0'或 true
       port: 8000, // 端口号，默认5173
       open: true, // 开发服务器启动时，自动在浏览器中打开应用程序
